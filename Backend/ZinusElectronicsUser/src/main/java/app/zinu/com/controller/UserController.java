@@ -1,6 +1,7 @@
 package app.zinu.com.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,9 +27,13 @@ public class UserController {
 	
 	@PostMapping("/create")
 	public ResponseEntity<?> createUser(@RequestBody User user){
-		
-		
-		return ResponseEntity.status(200).body(repo.save(user));
+		User savedUser = repo.save(user);
+
+	    if (savedUser != null) {
+	        return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
+	    } else {
+	        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+	    }
 		
 	}
 	
