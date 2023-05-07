@@ -26,4 +26,5 @@ public class Product {
 	private Integer modelId;
 	private Integer brandId;
 	private Integer inventoryId;
+	
 }
