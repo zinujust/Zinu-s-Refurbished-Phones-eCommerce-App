@@ -10,4 +10,5 @@ import app.zinu.com.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer>{
 	Optional<User> findByEmail(String email);
+	Optional<User> findByUser_id(String user_id);
 }
