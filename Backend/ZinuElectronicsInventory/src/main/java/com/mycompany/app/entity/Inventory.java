@@ -14,17 +14,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Product {
-
+public class Inventory {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer id;
-	private String name;
-	private String description;
-	private String sku;
-	private double price;
-	private String model;
 	private String brand;
-	private Integer inventoryId;
+	private String model;
+	private Integer qty;
 	
 }
