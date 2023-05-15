@@ -7,5 +7,5 @@ import com.mycompany.app.entity.UserAddress;
 
 @Repository
 public interface UserAddressRepository extends JpaRepository<UserAddress, Integer>{
-
+	UserAddress findByUser_Id(String user_Id);
 }
